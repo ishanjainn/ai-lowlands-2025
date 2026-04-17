@@ -9,7 +9,6 @@ from datetime import datetime, timedelta
 from typing import Dict, Any
 
 from crewai import Agent, Task, Crew, Process
-from langchain_openai import ChatOpenAI
 import openlit
 
 # Try to import search tools, but don't fail if they're not available
@@ -28,11 +27,7 @@ class TripPlannerCrew:
         """Initialize the trip planner with OpenAI model and tools"""
 
         # Initialize OpenAI model
-        self.llm = ChatOpenAI(
-            model="gpt-4o-mini",
-            temperature=0.7,
-            api_key=os.getenv("OPENAI_API_KEY")
-        )
+        self.llm = "openai/gpt-4o"
 
         # Initialize OpenLIT evaluator
         try:
@@ -557,7 +552,7 @@ def get_trip_details() -> Dict[str, Any]:
     budget = input("💰 What's your total budget? (e.g., $3000, €2500): ").strip()
     
     # Get travel dates
-    dates = input("📅 When are you traveling? (e.g., November 21-23, 2025): ").strip()
+    dates = input("📅 When are you traveling? (e.g., April 19-20, 2026): ").strip()
     
     # Get interests
     print("\n🎯 What are your interests? (Enter comma-separated interests)")

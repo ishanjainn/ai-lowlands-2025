@@ -1,6 +1,5 @@
-crewai>=0.193.0
-crewai-tools>=0.73.0
-langchain-openai>=0.3.30
-openai>=1.109.0
-python-dotenv>=1.0.0
-openlit>=1.35.0
+crewai
+crewai-tools
+openai
+python-dotenv
+openlit
